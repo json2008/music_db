@@ -16,8 +16,7 @@ defmodule MusicDB.MixProject do
       elixir: "~> 1.4",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases(),
-      preferred_cli_env: [cc: :test, all: :test]
+      aliases: aliases()
     ]
   end
 
@@ -46,17 +45,6 @@ defmodule MusicDB.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      cc: [
-        "format",
-        "format --check-formatted",
-        "compile --warnings-as-errors",
-        "credo --strict",
-        "dialyzer --format github"
-      ],
-      all: [
-        "cc",
-        "test"
-      ]
     ]
   end
 end

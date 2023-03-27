@@ -12,13 +12,13 @@ defmodule MusicDB.Artist do
   alias MusicDB.{Artist, Album}
 
   schema "artists" do
-    field(:name)
-    field(:birth_date, :date)
-    field(:death_date, :date)
+    field :name
+    field :birth_date, :date
+    field :death_date, :date
     timestamps()
 
-    has_many(:albums, Album)
-    has_many(:tracks, through: [:albums, :tracks])
+    has_many :albums, Album
+    has_many :tracks, through: [:albums, :tracks]
   end
 
   def changeset(artist, params) do

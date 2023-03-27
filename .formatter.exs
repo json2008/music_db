@@ -8,5 +8,10 @@
 #---
 # Used by "mix format"
 [
-  inputs: ["mix.exs", "{config,lib,test}/**/*.{ex,exs}"]
+  import_deps: [:ecto],
+  locals_without_parens: [
+    schema_type: 1
+  ],
+  inputs: ["*.{ex,exs}", "priv/*/seeds.exs", "{config,lib,test}/**/*.{ex,exs}"],
+  subdirectories: ["priv/*/migrations"]
 ]

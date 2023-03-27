@@ -21,21 +21,21 @@
 #
 #   mix ecto.reset
 #
-alias MusicDB.Repo
-alias MusicDB.{Artist, Album, Track, Genre, Log, AlbumWithEmbeds, ArtistEmbed, TrackEmbed}
-alias Ecto.Multi
+alias MusicDB.Repo, warn: false
+alias MusicDB.{Artist, Album, Track, Genre, Log, AlbumWithEmbeds, ArtistEmbed, TrackEmbed}, warn: false
+alias Ecto.Multi, warn: false
 
-import Ecto.Query
-import Ecto.Changeset
+import Ecto.Query, warn: false
+import Ecto.Changeset, warn: false
 
 defmodule Playground do
   # this is just to hide the "unused import" warnings while we play
-  def this_hides_warnings do
-    [Artist, Album, Track, Genre, Repo, Multi, Log, AlbumWithEmbeds, ArtistEmbed, TrackEmbed]
-    from(a in "artists")
-    from(a in "artists", where: a.id == 1)
-    cast({%{}, %{}}, %{}, [])
-  end
+#  def this_hides_warnings do
+#    [Artist, Album, Track, Genre, Repo, Multi, Log, AlbumWithEmbeds, ArtistEmbed, TrackEmbed]
+#    from(a in "artists")
+#    from(a in "artists", where: a.id == 1)
+#    cast({%{}, %{}}, %{}, [])
+#  end
 
   def play do
     ###############################################
